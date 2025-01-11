@@ -21,4 +21,10 @@ export class StudentController {
         return this.studentService.findOne(id);
     }
 
+    @Patch(':id')
+    update(@Param('id') id: number, @Body() updateData: Partial<Student>) {
+        return this.studentService.update(id, updateData);
+    }
+
+
 }
